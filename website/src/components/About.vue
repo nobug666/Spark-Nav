@@ -1,5 +1,5 @@
 <template>
-  <div class="About">
+  <div class="About" ref="jump7">
     <div class="text">
       <h1>关于我们 - 星火是谁？</h1>
       <p>
@@ -36,15 +36,23 @@
 <script>
 export default {
   name: "About",
+  methods: {
+    toJump7() {
+      this.$refs["jump7"].scrollIntoView(true);
+      this.$emit("handleClose", false);
+    },
+  },
 };
 </script>
 <style scoped>
 .About {
-  padding: 20px;
+  padding: 0 20px;
 }
 .text {
   max-width: 1000px;
   margin: 0 auto;
+  padding-top: 40px;
+  margin-top: 0px;
 }
 img {
   width: 200px;

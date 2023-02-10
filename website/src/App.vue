@@ -45,7 +45,7 @@
         :class="[!showDialog ? 'bottom' : 'bottom dialog']"
         v-show="showAbout"
       >
-        <About></About>
+        <About ref="about"></About>
       </div>
     </div>
   </el-row>
@@ -168,6 +168,9 @@ export default {
       } else if (event == 7) {
         this.showAbout = true;
         this.drawer = false;
+        setTimeout(() => {
+          this.$refs["about"].toJump7();
+        }, 200);
       }
     },
   },
